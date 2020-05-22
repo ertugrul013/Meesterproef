@@ -4,7 +4,8 @@
   "description": "A wedding website with loads of features.",
   "main": "npmfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -e index.html"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "font-awesome": "^4.7.0",
+    "nodemon": "^2.0.4",
     "waypoints": "^4.0.1"
   }
 }

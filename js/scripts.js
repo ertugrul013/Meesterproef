@@ -136,31 +136,6 @@ $(document).ready(function () {
 
     });
 
-    /********************** Social Share buttons ***********************/
-    var share_bar = document.getElementsByClassName('share-bar');
-    var po = document.createElement('script');
-    po.type = 'text/javascript';
-    po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(po, s);
-
-    for (var i = 0; i < share_bar.length; i++) {
-        var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
-            'style="width:105px; height:21px;">' +
-            '</iframe>' +
-
-            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
-
-            '<div class="g-plusone" data-size="medium"></div>';
-
-        // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
-
-        share_bar[i].innerHTML = html;
-        share_bar[i].style.display = 'inline-block';
-    }
-
     /********************** Embed youtube video *********************/
     $('.player').YTPlayer();
 
@@ -214,8 +189,8 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40' &&
+            MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbzUqz44wOat0DiGjRV1gUnRf4HRqlRARWggjvHKWvqniP7eVDG-/exec', data)
@@ -241,7 +216,10 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+    var location = {
+        lat: 51.446941,
+        lng: 5.454680
+    };
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
@@ -255,7 +233,10 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = {
+        lat: 51.44694,
+        lng: 5.454680
+    };
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
@@ -361,7 +342,9 @@ var MD5 = function (string) {
     };
 
     function WordToHex(lValue) {
-        var WordToHexValue = "", WordToHexValue_temp = "", lByte, lCount;
+        var WordToHexValue = "",
+            WordToHexValue_temp = "",
+            lByte, lCount;
         for (lCount = 0; lCount <= 3; lCount++) {
             lByte = (lValue >>> (lCount * 8)) & 255;
             WordToHexValue_temp = "0" + lByte.toString(16);
@@ -380,12 +363,10 @@ var MD5 = function (string) {
 
             if (c < 128) {
                 utftext += String.fromCharCode(c);
-            }
-            else if ((c > 127) && (c < 2048)) {
+            } else if ((c > 127) && (c < 2048)) {
                 utftext += String.fromCharCode((c >> 6) | 192);
                 utftext += String.fromCharCode((c & 63) | 128);
-            }
-            else {
+            } else {
                 utftext += String.fromCharCode((c >> 12) | 224);
                 utftext += String.fromCharCode(((c >> 6) & 63) | 128);
                 utftext += String.fromCharCode((c & 63) | 128);
@@ -398,10 +379,22 @@ var MD5 = function (string) {
 
     var x = Array();
     var k, AA, BB, CC, DD, a, b, c, d;
-    var S11 = 7, S12 = 12, S13 = 17, S14 = 22;
-    var S21 = 5, S22 = 9, S23 = 14, S24 = 20;
-    var S31 = 4, S32 = 11, S33 = 16, S34 = 23;
-    var S41 = 6, S42 = 10, S43 = 15, S44 = 21;
+    var S11 = 7,
+        S12 = 12,
+        S13 = 17,
+        S14 = 22;
+    var S21 = 5,
+        S22 = 9,
+        S23 = 14,
+        S24 = 20;
+    var S31 = 4,
+        S32 = 11,
+        S33 = 16,
+        S34 = 23;
+    var S41 = 6,
+        S42 = 10,
+        S43 = 15,
+        S44 = 21;
 
     string = Utf8Encode(string);
 
