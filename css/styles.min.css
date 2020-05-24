@@ -104,7 +104,7 @@ h5 {
 
 section.intro,
 section.features-extra,
-section.rsvp {
+section.download {
     background: #fff
 }
 
@@ -969,18 +969,18 @@ header .member-actions {
     pointer-events: auto
 }
 
-.rsvp {
+.download {
     padding-bottom: 140px
 }
 
-.rsvp .rsvp-form .rsvp-btn {
+.download .download-form .download-btn {
     padding: 15px 0;
     border-radius: 3px;
     width: 100%;
     font-size: 13px
 }
 
-.rsvp .rsvp-form .form-input-group {
+.download .download-form .form-input-group {
     width: 100%;
     height: 55px;
     margin: 0 auto 10px;
@@ -992,12 +992,12 @@ header .member-actions {
     position: relative
 }
 
-.rsvp .rsvp-form .form-input-group i {
+.download .download-form .form-input-group i {
     color: #e8ca6f;
     font-size: 14px
 }
 
-.rsvp .rsvp-form .form-input-group i:after {
+.download .download-form .form-input-group i:after {
     content: "";
     height: 30px;
     width: 1px;
@@ -1008,10 +1008,10 @@ header .member-actions {
     transform: translateY(-50%)
 }
 
-.rsvp .rsvp-form .form-input-group i.fa-user,
-.rsvp .rsvp-form .form-input-group i.fa-users,
-.rsvp .rsvp-form .form-input-group i.fa-envelope,
-.rsvp .rsvp-form .form-input-group .fa-key {
+.download .download-form .form-input-group i.fa-user,
+.download .download-form .form-input-group i.fa-users,
+.download .download-form .form-input-group i.fa-envelope,
+.download .download-form .form-input-group .fa-key {
     font-size: 14px;
     position: absolute;
     top: 50%;
@@ -1019,7 +1019,7 @@ header .member-actions {
     margin-left: 20px
 }
 
-.rsvp .rsvp-form .form-input-group input {
+.download .download-form .form-input-group input {
     padding-left: 68px;
     width: 100%;
     height: 100%;
@@ -1029,19 +1029,19 @@ header .member-actions {
     border: none
 }
 
-.rsvp .rsvp-form .form-input-group input::-webkit-input-placeholder {
+.download .download-form .form-input-group input::-webkit-input-placeholder {
     color: #BCC1C3
 }
 
-.rsvp .rsvp-form .form-input-group input:-moz-placeholder {
+.download .download-form .form-input-group input:-moz-placeholder {
     color: #BCC1C3
 }
 
-.rsvp .rsvp-form .form-input-group input::-moz-placeholder {
+.download .download-form .form-input-group input::-moz-placeholder {
     color: #BCC1C3
 }
 
-.rsvp .rsvp-form .form-input-group input:-ms-input-placeholder {
+.download .download-form .form-input-group input:-ms-input-placeholder {
     color: #BCC1C3
 }
 
