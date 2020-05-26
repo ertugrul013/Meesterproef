@@ -1,24 +1,23 @@
 {
-  "name": "wedding-website",
+  "name": "meesterproef-website",
   "version": "1.0.1",
-  "description": "A wedding website with loads of features.",
+  "description": "Meesterproef pagina ",
   "main": "npmfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -e index.html"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:rampatra/wedding-website.git"
+    "url": "https://github.com/ertugrul013/Meesterproef.git"
   },
   "keywords": [
     "wedding",
     "template",
     "website template"
   ],
-  "author": "Ram Patra",
+  "author": "Ertugrul Yesil",
   "license": "GPL-3.0",
-  "homepage": "https://github.com/rampatra/wedding-website",
+  "homepage": "https://ertugrul013.github.io/Meesterproef/",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
@@ -28,7 +27,6 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "font-awesome": "^4.7.0",
-    "nodemon": "^2.0.4",
     "waypoints": "^4.0.1"
   }
 }
