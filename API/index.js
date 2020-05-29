@@ -4,7 +4,8 @@ const nodemailer = require('nodemailer');
 
 var app = express();
 var transport = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
+    secure: false,
+    host: "smtp.live.com",
     port: 587,
     auth: {
         user: process.env.user,
@@ -27,6 +28,11 @@ app.get('/', function (req, res) {
     res.send('hello world');
 })
 
+app.get('/api/download', function (req, res) {
+    console.log("User visited /api/download with a get request");
+    res.send("Wrong request try it with a post request ")
+})
+
 app.post('/api/downlaod', function (req, res) {
     console.log("sending email to user");
     SendEmail(
@@ -42,7 +48,7 @@ app.post('/api/downlaod', function (req, res) {
         textBody[1],
     );
     res.status(200);
-    res.send("Succes");
+    res.send("Success");
 })
 
 
@@ -53,7 +59,7 @@ app.listen(3000, function () {
 
 function SendEmail(_to, _subject, _text) {
     const message = {
-        from: 'e.yesil@sintlucasedu.nl', // Sender address
+        from: process.env.admin, // Sender address
         to: _to,         // List of recipients
         subject: _subject, // Subject line
         text: _text// Plain text body
