@@ -148,7 +148,7 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        $.post('https://script.google.com/macros/s/AKfycbyvX-s1OJsMZlHIik133DHJiQQHdoa0E6gpa1ysjqiU2IgajGQ/exec', data)
+        $.post('https://us-central1-meesterproef-ab27d.cloudfunctions.net/app/api/download', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
