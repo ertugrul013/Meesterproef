@@ -5,9 +5,9 @@ const nodemailer = require('nodemailer');
 
 var app = express();
 var transport = nodemailer.createTransport({
-    secure: false,
     host: "smtp.live.com",
     port: 587,
+    pool: true,
     auth: {
         user: process.env.user,
         pass: process.env.pass
@@ -31,8 +31,9 @@ app.get('/', function (req, res) {
 })
 
 app.get('/api/download', function (req, res) {
-    if (req.query.invite_code == 1337) {
+    if (req.query.invite_code != 1337) {
         res.json({ "result": "error" });
+        return;
     }
 
     console.log("sending email to user");
@@ -44,14 +45,20 @@ app.get('/api/download', function (req, res) {
     console.log("Sending email to admin");
 
     SendEmail(
-        process.env.admin,
+        process.env.user,
         subjectText[1] + req.query.email + req.query.name,
         textBody[1],
     );
     res.status(200);
-    res.send("Success");
+    res.json({ "result": "success" });
 })
 
+// Add headers
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.listen(3000, function () {
     console.log("listing on port 3000");
@@ -60,7 +67,7 @@ app.listen(3000, function () {
 
 function SendEmail(_to, _subject, _text) {
     const message = {
-        from: process.env.admin, // Sender address
+        from: process.env.user, // Sender address
         to: _to,         // List of recipients
         subject: _subject, // Subject line
         text: _text// Plain text body
