@@ -5,10 +5,9 @@ A beautiful, feature rich, device friendly Meesterproef website.
 1. Slick and fully __responsive__ design.
 2. Download the Full __Research Papers__.
 3. A nice __Youtube video__ showing your venue.
-4. __Google Map__ showing your venue's location.
 
 # Getting Started
-1. `$ cd wedding-website` - go inside the project directory
+1. `$ cd Meesterproef` - go inside the project directory
 2. `$ npm install` - install dependencies _(optional)_
 3. `$ gulp` - compile sass to css, minify js, etc. _(optional)_
 4. That's it, open `index.html` on your browser by just double-clicking on the file.
