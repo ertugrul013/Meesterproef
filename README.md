@@ -11,3 +11,9 @@ A beautiful, feature rich, device friendly Meesterproef website.
 2. `$ npm install` - install dependencies _(optional)_
 3. `$ gulp` - compile sass to css, minify js, etc. _(optional)_
 4. That's it, open `index.html` on your browser by just double-clicking on the file.
+
+
+# Branches
+1. Master - The master branch holds only the readme file
+2. GH-pages - Holds the website. This is used for hosting. The hosting is done with Github Pages.
+3. API - Holds the API this is hosted with firebase.io
