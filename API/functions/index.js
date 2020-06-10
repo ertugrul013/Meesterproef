@@ -43,7 +43,7 @@ app.get('/api/download', function (req, res) {
         res.json({ "result": "error" });
         return;
     } else {
-        if (req.query.invite_code = 39687) {
+        if (req.query.invite_code == 39687) {
             console.log("teacher accessed API");
             isTeacher = true;
         } else {
